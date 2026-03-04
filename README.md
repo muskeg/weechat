@@ -9,7 +9,7 @@ A Docker image that builds [WeeChat](https://weechat.org/) from source. Designed
 docker compose up -d
 
 # Connect to WeeChat
-docker exec -it weechat screen -r weechat
+docker exec -it -u weechat weechat screen -xAU weechat
 
 # Detach without stopping: Ctrl-a d
 ```
@@ -27,13 +27,13 @@ By default the image automatically fetches the **latest WeeChat release** from G
 docker compose up -d
 
 # Connect to WeeChat
-docker exec -it weechat screen -r weechat
+docker exec -it -u weechat weechat screen -xAU weechat
 
 # Detach without stopping WeeChat (keeps running after SSH disconnect)
 # Press: Ctrl-a d
 
 # Reconnect later (e.g. new SSH session)
-docker exec -it weechat screen -r weechat
+docker exec -it -u weechat weechat screen -xAU weechat
 
 # Stop WeeChat
 docker compose stop
