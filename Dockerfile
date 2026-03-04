@@ -79,6 +79,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libgnutls30 \
     libncursesw6 \
     libzstd1 \
+    locales \
     zlib1g \
     # ── Plugin runtime dependencies ──
     # ENABLE_PYTHON
@@ -98,6 +99,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     # ENABLE_PHP  (uncomment to enable)
     # libphp-embed \
     && rm -rf /var/lib/apt/lists/*
+
+# Generate UTF-8 locale
+RUN sed -i '/en_US.UTF-8/s/^# //' /etc/locale.gen && locale-gen
+ENV LANG=en_US.UTF-8
+ENV LC_ALL=en_US.UTF-8
 
 COPY --from=builder /usr/local /usr/local
 
