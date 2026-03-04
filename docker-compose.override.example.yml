@@ -28,4 +28,4 @@ services:
 
     # ── Additional volumes (e.g. mount custom scripts from host) ──
     # volumes:
-    #   - ./scripts:/home/weechat/.local/share/weechat/python:ro
+    #   - ./scripts:/home/weechat/.local/share/weechat/python/autoload:ro
