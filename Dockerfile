@@ -80,7 +80,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libncursesw6 \
     libzstd1 \
     locales \
-    screen \
+    tmux \
     zlib1g \
     # ── Plugin runtime dependencies ──
     # ENABLE_PYTHON
@@ -118,15 +118,13 @@ RUN useradd -m -s /bin/bash weechat \
                 /home/weechat/.cache/weechat \
     && chown -R weechat:weechat /home/weechat
 
-# Configure screen for UTF-8
+# Configure tmux for UTF-8 and 256-color
 RUN printf '%s\n' \
-    'defutf8 on' \
-    'encoding utf8 utf8' \
-    'defencoding utf8' \
-    'term screen-256color' \
-    'termcapinfo xterm* ti@:te@' \
-    > /home/weechat/.screenrc \
-    && chown weechat:weechat /home/weechat/.screenrc
+    'set -g default-terminal "tmux-256color"' \
+    'set -gq utf8 on' \
+    'set -gq status-utf8 on' \
+    > /home/weechat/.tmux.conf \
+    && chown weechat:weechat /home/weechat/.tmux.conf
 
 WORKDIR /home/weechat
 
