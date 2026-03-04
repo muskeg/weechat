@@ -1,0 +1,11 @@
+services:
+  weechat:
+    build: .
+    image: weechat
+    container_name: weechat
+    restart: unless-stopped
+    stdin_open: true   # -i
+    tty: true          # -t
+    volumes:
+      - ./data/config:/home/weechat/.config/weechat
+      - ./data/share:/home/weechat/.local/share/weechat
