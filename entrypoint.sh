@@ -12,6 +12,10 @@ chown -R weechat:weechat /home/weechat/.config/weechat \
                          /home/weechat/.local/share/weechat \
                          /home/weechat/.cache/weechat
 
+# Ensure UTF-8 locale is set for screen and WeeChat
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
 # Start WeeChat inside a detached screen session with UTF-8 support
 gosu weechat screen -dmSU weechat weechat "$@"
 

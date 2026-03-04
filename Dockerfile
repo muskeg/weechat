@@ -119,7 +119,12 @@ RUN useradd -m -s /bin/bash weechat \
     && chown -R weechat:weechat /home/weechat
 
 # Configure screen for UTF-8
-RUN echo 'defutf8 on\ndefencoding utf8\ntermcapinfo xterm* ti@:te@' \
+RUN printf '%s\n' \
+    'defutf8 on' \
+    'encoding utf8 utf8' \
+    'defencoding utf8' \
+    'term screen-256color' \
+    'termcapinfo xterm* ti@:te@' \
     > /home/weechat/.screenrc \
     && chown weechat:weechat /home/weechat/.screenrc
 
