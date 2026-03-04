@@ -61,7 +61,6 @@ RUN mkdir build && cd build \
         -DENABLE_JAVASCRIPT=OFF \
         -DENABLE_PHP=OFF \
         -DENABLE_SPELL=ON \
-        -DENABLE_SCRIPTS=OFF \
         -DENABLE_DOC=OFF \
         -DENABLE_TESTS=OFF \
     && make -j"$(nproc)" \
