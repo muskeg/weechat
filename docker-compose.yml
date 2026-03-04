@@ -1,7 +1,6 @@
 services:
   weechat:
     build: .
-    image: weechat
     container_name: weechat
     restart: unless-stopped
     stdin_open: true   # -i
