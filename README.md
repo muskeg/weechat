@@ -111,7 +111,13 @@ To auto-join channels when connecting:
 
 ### Timezone
 
-WeeChat inherits the container's timezone (UTC by default). To change it, add a `TZ` environment variable in `docker-compose.yml`:
+WeeChat inherits the container's timezone (UTC by default). To change it, create a local override file that won't be overwritten by `git pull`:
+
+```bash
+cp docker-compose.override.example.yml docker-compose.override.yml
+```
+
+Then edit `docker-compose.override.yml` with your timezone:
 
 ```yaml
 services:
@@ -119,6 +125,8 @@ services:
     environment:
       - TZ=America/New_York
 ```
+
+Docker Compose merges this file automatically. The override is gitignored so it survives pulls.
 
 Or set the timestamp format inside WeeChat:
 

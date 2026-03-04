@@ -1,0 +1,31 @@
+# Local overrides — not tracked by git.
+# Copy docker-compose.override.example.yml to docker-compose.override.yml
+# and customize as needed.
+#
+#   cp docker-compose.override.example.yml docker-compose.override.yml
+#
+# Then: docker compose up -d
+services:
+  weechat:
+    environment:
+      # ── Timezone ──
+      - TZ=America/New_York
+
+      # ── Locale (affects character encoding) ──
+      # - LANG=en_US.UTF-8
+
+      # ── Pass TERM if you have rendering issues ──
+      # - TERM=xterm-256color
+
+    # ── Resource limits ──
+    # mem_limit: 256m
+    # cpus: 0.5
+
+    # ── Expose WeeChat relay for mobile apps (e.g. Glowing Bear) ──
+    # Uncomment and configure relay in WeeChat: /relay add weechat 9001
+    # ports:
+    #   - "9001:9001"
+
+    # ── Additional volumes (e.g. mount custom scripts from host) ──
+    # volumes:
+    #   - ./scripts:/home/weechat/.local/share/weechat/python:ro
