@@ -118,6 +118,11 @@ RUN useradd -m -s /bin/bash weechat \
                 /home/weechat/.cache/weechat \
     && chown -R weechat:weechat /home/weechat
 
+# Configure screen for UTF-8
+RUN echo 'defutf8 on\ndefencoding utf8\ntermcapinfo xterm* ti@:te@' \
+    > /home/weechat/.screenrc \
+    && chown weechat:weechat /home/weechat/.screenrc
+
 WORKDIR /home/weechat
 
 # Persist WeeChat data between container upgrades
