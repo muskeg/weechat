@@ -80,6 +80,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libncursesw6 \
     libzstd1 \
     locales \
+    screen \
     zlib1g \
     # ── Plugin runtime dependencies ──
     # ENABLE_PYTHON
