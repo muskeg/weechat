@@ -17,7 +17,11 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 # Start WeeChat inside a detached tmux session
-gosu weechat tmux new-session -d -s weechat weechat "$@"
+gosu weechat tmux new-session -d -s weechat \
+    -e LANG=en_US.UTF-8 \
+    -e LC_ALL=en_US.UTF-8 \
+    -e TERM=tmux-256color \
+    weechat "$@"
 
 # Keep the container alive as long as the tmux session exists
 while gosu weechat tmux has-session -t weechat 2>/dev/null; do
