@@ -72,6 +72,7 @@ FROM debian:bookworm-slim
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ca-certificates \
+    gosu \
     libcjson1 \
     libcurl3-gnutls \
     libgcrypt20 \
@@ -103,14 +104,13 @@ COPY --from=builder /usr/local /usr/local
 # Refresh the linker cache so libs in /usr/local/lib are found
 RUN ldconfig
 
-# Create a non-root user and pre-create WeeChat directories with correct ownership
+# Create a non-root user and pre-create WeeChat directories
 RUN useradd -m -s /bin/bash weechat \
     && mkdir -p /home/weechat/.config/weechat \
                 /home/weechat/.local/share/weechat/logs \
                 /home/weechat/.cache/weechat \
     && chown -R weechat:weechat /home/weechat
 
-USER weechat
 WORKDIR /home/weechat
 
 # Persist WeeChat data between container upgrades
@@ -118,8 +118,8 @@ VOLUME /home/weechat/.config/weechat
 VOLUME /home/weechat/.local/share/weechat
 VOLUME /home/weechat/.cache/weechat
 
-# Copy entrypoint
-COPY --chown=weechat:weechat entrypoint.sh /home/weechat/entrypoint.sh
+# Copy entrypoint (runs as root, drops to weechat user)
+COPY entrypoint.sh /home/weechat/entrypoint.sh
 RUN chmod +x /home/weechat/entrypoint.sh
 
 ENTRYPOINT ["/home/weechat/entrypoint.sh"]
