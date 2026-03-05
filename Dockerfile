@@ -124,10 +124,10 @@ RUN printf '%s\n' \
     'set -gq status-utf8 on' \
     '' \
     '# Minimal dark status bar — just time on the right, nothing else' \
-    'set -g status-style "bg=colour235,fg=colour243"' \
+    'set -g status-style "bg=colour235,fg=colour245"' \
     'set -g status-left ""' \
     'set -g status-right " %H:%M %Y-%m-%d "' \
-    'set -g status-right-style "bg=colour235,fg=colour243"' \
+    'set -g status-right-style "bg=colour235,fg=colour245"' \
     'set -g window-status-format ""' \
     'set -g window-status-current-format ""' \
     > /home/weechat/.tmux.conf \
