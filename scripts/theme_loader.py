@@ -53,6 +53,37 @@ def list_themes():
     )
 
 
+def get_theme_description(name):
+    """Extract a short description from the theme's README.md.
+
+    Reads the second heading (## ...) as the tagline if present,
+    otherwise takes the first non-empty, non-heading paragraph line.
+    Strips markdown formatting for clean display in WeeChat.
+    """
+    import re
+    readme = os.path.join(THEMES_DIR, name, "README.md")
+    if not os.path.isfile(readme):
+        return ""
+    try:
+        with open(readme, "r", encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                # Skip blank lines, markdown headings, and horizontal rules
+                if not line or line.startswith("#") or line.startswith("---"):
+                    continue
+                # Strip markdown link syntax: [text](url) → text
+                line = re.sub(r'\[([^\]]+)\]\([^)]+\)', r'\1', line)
+                # Strip bold/italic markers
+                line = re.sub(r'\*{1,2}([^*]+)\*{1,2}', r'\1', line)
+                # Truncate for clean display
+                if len(line) > 80:
+                    line = line[:77] + "..."
+                return line
+    except OSError:
+        pass
+    return ""
+
+
 def parse_theme_options(name):
     """Return a list of (option_name, value) from a theme's commands.txt."""
     commands_file = os.path.join(THEMES_DIR, name, "commands.txt")
@@ -237,8 +268,10 @@ def theme_command_cb(data, buffer, args):
         else:
             weechat.prnt("", f"{SCRIPT_NAME}: available themes:")
             for t in themes:
-                marker = " (active)" if t == active else ""
-                weechat.prnt("", f"  {t}{marker}")
+                marker = " \x0313(active)\x0f" if t == active else ""
+                desc = get_theme_description(t)
+                desc_str = f" \x0314— {desc}\x0f" if desc else ""
+                weechat.prnt("", f"  \x0306{t}\x0f{marker}{desc_str}")
 
     elif subcmd == "apply":
         if len(argv) < 2:
