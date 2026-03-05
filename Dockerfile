@@ -79,6 +79,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libncursesw6 \
     libzstd1 \
     locales \
+    ncurses-term \
     tmux \
     zlib1g \
     # ── Plugin runtime dependencies ──
@@ -120,6 +121,8 @@ RUN useradd -m -s /bin/bash weechat \
 # Configure tmux for UTF-8 and 256-color
 RUN printf '%s\n' \
     'set -g default-terminal "tmux-256color"' \
+    'set -ga terminal-overrides ",xterm-256color:Tc"' \
+    'set -ga terminal-overrides ",*256col*:Tc"' \
     'set -gq utf8 on' \
     'set -gq status-utf8 on' \
     '' \
