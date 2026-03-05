@@ -4,7 +4,7 @@
 #
 # Usage:
 #   docker compose up -d                                             # start in background
-#   docker exec -it -u weechat weechat tmux attach -t weechat        # connect
+#   docker exec -it -e TERM=xterm-256color -u weechat weechat tmux attach -t weechat        # connect
 #   Ctrl-b d                                                         # detach
 
 # Fix ownership of bind-mounted directories (they may be created as root)

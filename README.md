@@ -9,7 +9,7 @@ A Docker image that builds [WeeChat](https://weechat.org/) from source. Designed
 docker compose up -d
 
 # Connect to WeeChat
-docker exec -it -u weechat weechat tmux attach -t weechat
+docker exec -it -e TERM=xterm-256color -u weechat weechat tmux attach -t weechat
 
 # Detach without stopping: Ctrl-b d
 ```
@@ -22,18 +22,21 @@ By default the image automatically fetches the **latest WeeChat release** from G
 
 ### Running
 
+> **Note:** The `-e TERM=xterm-256color` flag ensures proper 256-color support
+> inside tmux. Without it, colors may render incorrectly (e.g. dark/washed out).
+
 ```bash
 # Start WeeChat (builds the image automatically on first run)
 docker compose up -d
 
 # Connect to WeeChat
-docker exec -it -u weechat weechat tmux attach -t weechat
+docker exec -it -e TERM=xterm-256color -u weechat weechat tmux attach -t weechat
 
 # Detach without stopping WeeChat (keeps running after SSH disconnect)
 # Press: Ctrl-b d
 
 # Reconnect later (e.g. new SSH session)
-docker exec -it -u weechat weechat tmux attach -t weechat
+docker exec -it -e TERM=xterm-256color -u weechat weechat tmux attach -t weechat
 
 # Stop WeeChat
 docker compose stop
