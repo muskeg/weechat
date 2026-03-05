@@ -3,8 +3,8 @@
 # Original design — sleek modern palette for black/OLED displays
 # ============================================================
 # Palette reference (256-color):
-#   Backgrounds (true black → OLED friendly):
-#     bg0=default  bg1=234  bg2=236  bg3=238
+#   Backgrounds (dark carbon gray → sleek modern):
+#     bg0=233  bg1=235  bg2=236  bg3=238
 #   Foregrounds (cool steel):
 #     fg0=255  fg1=252  fg2=249  fg4=245  gray=242  dim=239
 #   Accents (high-contrast, modern):
@@ -19,7 +19,7 @@
 # Core Chat Colors
 # ----------------------------
 /set weechat.color.chat default
-/set weechat.color.chat_bg default
+/set weechat.color.chat_bg 233
 /set weechat.color.chat_buffer 75
 /set weechat.color.chat_channel 75
 /set weechat.color.chat_day_change 242
@@ -71,7 +71,7 @@
 /set weechat.color.item_away 221
 /set weechat.color.nicklist_away 242
 /set weechat.color.nicklist_group 78
-/set weechat.color.separator 234
+/set weechat.color.separator 235
 /set weechat.color.bar_more 141
 
 # ----------------------------
@@ -99,24 +99,24 @@
 # ----------------------------
 # Bar Backgrounds & Foregrounds
 # ----------------------------
-/set weechat.bar.status.color_bg 234
-/set weechat.bar.status.color_bg_inactive 232
+/set weechat.bar.status.color_bg 235
+/set weechat.bar.status.color_bg_inactive 233
 /set weechat.bar.status.color_fg 252
 /set weechat.bar.status.color_delim 245
-/set weechat.bar.title.color_bg 234
-/set weechat.bar.title.color_bg_inactive 232
+/set weechat.bar.title.color_bg 235
+/set weechat.bar.title.color_bg_inactive 233
 /set weechat.bar.title.color_fg 252
 /set weechat.bar.title.color_delim 245
-/set weechat.bar.input.color_bg default
+/set weechat.bar.input.color_bg 233
 /set weechat.bar.input.color_fg default
 /set weechat.bar.input.color_delim 245
-/set weechat.bar.nicklist.color_bg default
+/set weechat.bar.nicklist.color_bg 233
 /set weechat.bar.nicklist.color_fg 252
 /set weechat.bar.nicklist.color_delim 245
-/set weechat.bar.buflist.color_bg default
+/set weechat.bar.buflist.color_bg 233
 /set weechat.bar.buflist.color_fg 252
 /set weechat.bar.buflist.color_delim 245
-/set weechat.bar.fset.color_bg default
+/set weechat.bar.fset.color_bg 233
 /set weechat.bar.fset.color_fg 252
 /set weechat.bar.fset.color_delim 245
 
@@ -131,7 +131,7 @@
 /set irc.color.item_tls_version_insecure 203
 /set irc.color.item_tls_version_ok 78
 /set irc.color.list_buffer_line_selected 252
-/set irc.color.list_buffer_line_selected_bg 234
+/set irc.color.list_buffer_line_selected_bg 235
 /set irc.color.message_account 80
 /set irc.color.message_chghost 221
 /set irc.color.message_join 78
@@ -150,7 +150,7 @@
 # Buflist Formats
 # ----------------------------
 /set buflist.format.buffer "${format_number}${indent}${format_nick_prefix}${color_hotlist}${format_name}"
-/set buflist.format.buffer_current "${color:,234}${format_buffer}"
+/set buflist.format.buffer_current "${color:,235}${format_buffer}"
 /set buflist.format.hotlist " ${color:78}(${hotlist}${color:78})"
 /set buflist.format.hotlist_highlight "${color:141}"
 /set buflist.format.hotlist_low "${color:245}"
@@ -185,8 +185,8 @@
 /set fset.color.index_selected 75
 /set fset.color.line_marked_bg1 236
 /set fset.color.line_marked_bg2 236
-/set fset.color.line_selected_bg1 234
-/set fset.color.line_selected_bg2 234
+/set fset.color.line_selected_bg1 235
+/set fset.color.line_selected_bg2 235
 /set fset.color.marked 221
 /set fset.color.marked_selected 221
 /set fset.color.max 245
