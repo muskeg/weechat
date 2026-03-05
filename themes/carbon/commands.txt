@@ -115,7 +115,7 @@
 /set weechat.bar.nicklist.color_delim 245
 /set weechat.bar.buflist.color_bg default
 /set weechat.bar.buflist.color_fg 252
-/set weechat.bar.buflist.color_delim 245
+/set weechat.bar.buflist.color_delim 239
 /set weechat.bar.fset.color_bg default
 /set weechat.bar.fset.color_fg 252
 /set weechat.bar.fset.color_delim 245
