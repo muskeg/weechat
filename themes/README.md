@@ -10,6 +10,7 @@ Custom color themes for WeeChat, ported from popular terminal/shell themes.
 | [catppuccin_mocha](catppuccin_mocha/) | [oh-my-posh catppuccin_mocha](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/catppuccin_mocha.omp.json) | Cozy pastel dark theme with blue-tinted neutrals |
 | [slimfat](slimfat/) | [oh-my-posh slimfat](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/slimfat.omp.json) | High-contrast neon cyberpunk with cyan/mint/yellow accents |
 | [yozakura](yozakura/) | Original design | 夜桜 — Night cherry blossoms with lantern gold and moonlight blue |
+| [carbon](carbon/) | Original design | Sleek modern OLED-friendly theme with electric blue accents on true black |
 
 ## How to Apply a Theme
 
