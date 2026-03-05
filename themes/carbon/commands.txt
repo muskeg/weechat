@@ -71,7 +71,7 @@
 /set weechat.color.item_away 221
 /set weechat.color.nicklist_away 242
 /set weechat.color.nicklist_group 78
-/set weechat.color.separator 235
+/set weechat.color.separator 237
 /set weechat.color.bar_more 141
 
 # ----------------------------
