@@ -71,7 +71,7 @@
 /set weechat.color.item_away 221
 /set weechat.color.nicklist_away 242
 /set weechat.color.nicklist_group 78
-/set weechat.color.separator 235
+/set weechat.color.separator 236
 /set weechat.color.bar_more 141
 
 # ----------------------------
@@ -100,11 +100,11 @@
 # Bar Backgrounds & Foregrounds
 # ----------------------------
 /set weechat.bar.status.color_bg 236
-/set weechat.bar.status.color_bg_inactive 235
+/set weechat.bar.status.color_bg_inactive 236
 /set weechat.bar.status.color_fg 252
 /set weechat.bar.status.color_delim 245
 /set weechat.bar.title.color_bg 236
-/set weechat.bar.title.color_bg_inactive 235
+/set weechat.bar.title.color_bg_inactive 236
 /set weechat.bar.title.color_fg 252
 /set weechat.bar.title.color_delim 245
 /set weechat.bar.input.color_bg 236
