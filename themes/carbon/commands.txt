@@ -103,8 +103,8 @@
 /set weechat.bar.status.color_bg_inactive default
 /set weechat.bar.status.color_fg 252
 /set weechat.bar.status.color_delim 245
-/set weechat.bar.title.color_bg 235
-/set weechat.bar.title.color_bg_inactive 235
+/set weechat.bar.title.color_bg 236
+/set weechat.bar.title.color_bg_inactive 236
 /set weechat.bar.title.color_fg 252
 /set weechat.bar.title.color_delim 245
 /set weechat.bar.input.color_bg default
