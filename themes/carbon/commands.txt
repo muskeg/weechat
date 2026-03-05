@@ -46,7 +46,7 @@
 /set weechat.color.chat_prefix_more 141
 /set weechat.color.chat_prefix_network 141
 /set weechat.color.chat_prefix_quit 203
-/set weechat.color.chat_prefix_suffix 75
+/set weechat.color.chat_prefix_suffix 239
 /set weechat.color.chat_read_marker 209
 /set weechat.color.chat_read_marker_bg default
 /set weechat.color.chat_server 221
