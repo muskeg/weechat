@@ -1,3 +1,4 @@
 data/
 docker-compose.override.yml
-scripts/
+scripts/*
+!scripts/theme_loader.py

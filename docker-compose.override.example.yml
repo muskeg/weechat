@@ -27,5 +27,6 @@ services:
     #   - "9001:9001"
 
     # ── Additional volumes (e.g. mount custom scripts from host) ──
-    # volumes:
+    volumes:
+      - ./scripts:/home/weechat/.local/share/weechat/python/autoload:ro
     #   - ./scripts:/home/weechat/.local/share/weechat/python/autoload:ro
