@@ -89,7 +89,7 @@
 /set weechat.color.status_modes 252
 /set weechat.color.status_more 221
 /set weechat.color.status_mouse 78
-/set weechat.color.status_name 255
+/set weechat.color.status_name 117
 /set weechat.color.status_name_insecure 203
 /set weechat.color.status_name_tls 78
 /set weechat.color.status_nicklist_count 245
