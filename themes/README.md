@@ -8,6 +8,7 @@ Custom color themes for WeeChat, ported from popular terminal/shell themes.
 |-------|--------|-------------|
 | [gruvbox](gruvbox/) | [oh-my-posh gruvbox](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/gruvbox.omp.json) | Warm retro groove colorscheme |
 | [catppuccin_mocha](catppuccin_mocha/) | [oh-my-posh catppuccin_mocha](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/catppuccin_mocha.omp.json) | Cozy pastel dark theme with blue-tinted neutrals |
+| [slimfat](slimfat/) | [oh-my-posh slimfat](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/slimfat.omp.json) | High-contrast neon cyberpunk with cyan/mint/yellow accents |
 
 ## How to Apply a Theme
 
@@ -24,6 +25,8 @@ The `theme_loader.py` script (auto-loaded from `scripts/`) provides a `/theme` c
 /theme list              — show available themes
 /theme apply gruvbox     — apply the gruvbox theme
 /theme current           — show which theme is active
+/theme save mytheme      — save current colors as a new theme
+/theme reset             — reset active theme (unset all themed options)
 ```
 
 Once applied, the active theme is remembered and **auto-applied on every WeeChat startup**.

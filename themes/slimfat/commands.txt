@@ -1,0 +1,239 @@
+# ============================================================
+# Slimfat Theme for WeeChat
+# Ported from oh-my-posh slimfat.omp.json
+# ============================================================
+# Palette reference (256-color):
+#   Backgrounds (neutral grays — only for bg use):
+#     bg0_h=235  bg0=236  bg1=237  bg2=239  bg3=241
+#   Foregrounds (neutral whites and grays):
+#     fg0=231  fg1=255  fg2=252  fg4=249  gray=243  inactive=241
+#   Accents (all safe as foreground on dark bg):
+#     cyan=80(#5fd7d7)       mint=86(#5fffd7)
+#     yellow=227(#ffff5f)    gold=221(#ffd75f)
+#     red=203(#ff5f5f)       green=77(#5fd75f)
+#     purple=99(#875fff)     lime=149(#afd75f)
+#     olive=71(#5faf5f)      blue=32(#0087d7)
+#   Dim accents (for bg use only):
+#     red_dim=52   purple_dim=54
+# ============================================================
+
+# ----------------------------
+# Core Chat Colors
+# ----------------------------
+/set weechat.color.chat default
+/set weechat.color.chat_bg default
+/set weechat.color.chat_buffer 80
+/set weechat.color.chat_channel 80
+/set weechat.color.chat_day_change 243
+/set weechat.color.chat_delimiters 249
+/set weechat.color.chat_highlight 227
+/set weechat.color.chat_highlight_bg 239
+/set weechat.color.chat_host 86
+/set weechat.color.chat_inactive_buffer 243
+/set weechat.color.chat_inactive_window 241
+/set weechat.color.chat_nick 80
+/set weechat.color.chat_nick_colors "203,99,221,227,77,86,80,149,71"
+/set weechat.color.chat_nick_offline 243
+/set weechat.color.chat_nick_offline_highlight 227
+/set weechat.color.chat_nick_offline_highlight_bg 239
+/set weechat.color.chat_nick_other 86
+/set weechat.color.chat_nick_prefix 77
+/set weechat.color.chat_nick_self 227
+/set weechat.color.chat_nick_suffix 77
+/set weechat.color.chat_prefix_action 255
+/set weechat.color.chat_prefix_buffer 227
+/set weechat.color.chat_prefix_buffer_inactive_buffer 243
+/set weechat.color.chat_prefix_error 203
+/set weechat.color.chat_prefix_join 77
+/set weechat.color.chat_prefix_more 99
+/set weechat.color.chat_prefix_network 99
+/set weechat.color.chat_prefix_quit 203
+/set weechat.color.chat_prefix_suffix 80
+/set weechat.color.chat_read_marker 221
+/set weechat.color.chat_read_marker_bg default
+/set weechat.color.chat_server 221
+/set weechat.color.chat_status_disabled 203
+/set weechat.color.chat_status_enabled 77
+/set weechat.color.chat_tags 243
+/set weechat.color.chat_text_found 231
+/set weechat.color.chat_text_found_bg 54
+/set weechat.color.chat_time 249
+/set weechat.color.chat_time_delimiters 243
+/set weechat.color.chat_value 86
+/set weechat.color.chat_value_null 99
+/set weechat.color.emphasized 231
+/set weechat.color.emphasized_bg 54
+/set weechat.color.eval_syntax_colors "77,203,80,99,227,86"
+
+# ----------------------------
+# Input & Misc UI
+# ----------------------------
+/set weechat.color.input_actions 77
+/set weechat.color.input_text_not_found 203
+/set weechat.color.item_away 227
+/set weechat.color.nicklist_away 243
+/set weechat.color.nicklist_group 77
+/set weechat.color.separator 237
+/set weechat.color.bar_more 99
+
+# ----------------------------
+# Status Bar
+# ----------------------------
+/set weechat.color.status_count_highlight 99
+/set weechat.color.status_count_msg 221
+/set weechat.color.status_count_other 249
+/set weechat.color.status_count_private 77
+/set weechat.color.status_data_highlight 99
+/set weechat.color.status_data_msg 221
+/set weechat.color.status_data_other 249
+/set weechat.color.status_data_private 77
+/set weechat.color.status_filter 77
+/set weechat.color.status_modes 255
+/set weechat.color.status_more 221
+/set weechat.color.status_mouse 77
+/set weechat.color.status_name 255
+/set weechat.color.status_name_insecure 203
+/set weechat.color.status_name_tls 77
+/set weechat.color.status_nicklist_count 249
+/set weechat.color.status_number 227
+/set weechat.color.status_time 249
+
+# ----------------------------
+# Bar Backgrounds & Foregrounds
+# ----------------------------
+/set weechat.bar.status.color_bg 237
+/set weechat.bar.status.color_bg_inactive 236
+/set weechat.bar.status.color_fg 255
+/set weechat.bar.status.color_delim 249
+/set weechat.bar.title.color_bg 237
+/set weechat.bar.title.color_bg_inactive 236
+/set weechat.bar.title.color_fg 255
+/set weechat.bar.title.color_delim 249
+/set weechat.bar.input.color_bg default
+/set weechat.bar.input.color_fg default
+/set weechat.bar.input.color_delim 249
+/set weechat.bar.nicklist.color_bg default
+/set weechat.bar.nicklist.color_fg 255
+/set weechat.bar.nicklist.color_delim 249
+/set weechat.bar.buflist.color_bg default
+/set weechat.bar.buflist.color_fg 255
+/set weechat.bar.buflist.color_delim 249
+/set weechat.bar.fset.color_bg default
+/set weechat.bar.fset.color_fg 255
+/set weechat.bar.fset.color_delim 249
+
+# ----------------------------
+# IRC Plugin Colors
+# ----------------------------
+/set irc.color.input_nick 227
+/set irc.color.item_lag_counting 249
+/set irc.color.item_lag_finished 221
+/set irc.color.item_nick_modes 249
+/set irc.color.item_tls_version_deprecated 221
+/set irc.color.item_tls_version_insecure 203
+/set irc.color.item_tls_version_ok 77
+/set irc.color.list_buffer_line_selected 255
+/set irc.color.list_buffer_line_selected_bg 237
+/set irc.color.message_account 86
+/set irc.color.message_chghost 221
+/set irc.color.message_join 77
+/set irc.color.message_kick 203
+/set irc.color.message_quit 203
+/set irc.color.message_setname 221
+/set irc.color.nick_prefixes "y:203;q:203;a:80;o:77;h:99;v:227;*:80"
+/set irc.color.notice 77
+/set irc.color.reason_kick 249
+/set irc.color.reason_quit 249
+/set irc.color.topic_current 255
+/set irc.color.topic_new 86
+/set irc.color.topic_old 243
+
+# ----------------------------
+# Buflist Formats
+# ----------------------------
+/set buflist.format.buffer "${format_number}${indent}${format_nick_prefix}${color_hotlist}${format_name}"
+/set buflist.format.buffer_current "${color:,237}${format_buffer}"
+/set buflist.format.hotlist " ${color:77}(${hotlist}${color:77})"
+/set buflist.format.hotlist_highlight "${color:99}"
+/set buflist.format.hotlist_low "${color:249}"
+/set buflist.format.hotlist_message "${color:221}"
+/set buflist.format.hotlist_none "${color:255}"
+/set buflist.format.hotlist_private "${color:77}"
+/set buflist.format.hotlist_separator "${color:249},"
+/set buflist.format.lag " ${color:77}[${color:221}${lag}${color:77}]"
+/set buflist.format.number "${color:227}${number}${if:${number_displayed}?.: }"
+
+# ----------------------------
+# Fset Plugin Colors
+# ----------------------------
+/set fset.color.allowed_values 249
+/set fset.color.allowed_values_selected 255
+/set fset.color.color_name 249
+/set fset.color.color_name_selected 255
+/set fset.color.default_value 249
+/set fset.color.default_value_selected 255
+/set fset.color.description 243
+/set fset.color.description_selected 255
+/set fset.color.file 249
+/set fset.color.file_changed 221
+/set fset.color.file_changed_selected 227
+/set fset.color.file_selected 255
+/set fset.color.help_default_value 255
+/set fset.color.help_description 255
+/set fset.color.help_name 255
+/set fset.color.help_quotes 243
+/set fset.color.help_values 255
+/set fset.color.index 86
+/set fset.color.index_selected 80
+/set fset.color.line_marked_bg1 239
+/set fset.color.line_marked_bg2 239
+/set fset.color.line_selected_bg1 237
+/set fset.color.line_selected_bg2 237
+/set fset.color.marked 221
+/set fset.color.marked_selected 227
+/set fset.color.max 249
+/set fset.color.max_selected 255
+/set fset.color.min 249
+/set fset.color.min_selected 255
+/set fset.color.name 255
+/set fset.color.name_changed 221
+/set fset.color.name_changed_selected 227
+/set fset.color.name_selected 231
+/set fset.color.option 255
+/set fset.color.option_changed 221
+/set fset.color.option_changed_selected 227
+/set fset.color.option_selected 231
+/set fset.color.parent_name 249
+/set fset.color.parent_name_selected 255
+/set fset.color.parent_value 86
+/set fset.color.parent_value_selected 80
+/set fset.color.quotes 243
+/set fset.color.quotes_changed 249
+/set fset.color.quotes_changed_selected 255
+/set fset.color.quotes_selected 249
+/set fset.color.section 249
+/set fset.color.section_changed 221
+/set fset.color.section_changed_selected 227
+/set fset.color.section_selected 255
+/set fset.color.string_values 249
+/set fset.color.string_values_selected 255
+/set fset.color.title_count_options 86
+/set fset.color.title_current_option 80
+/set fset.color.title_filter 227
+/set fset.color.title_marked_options 77
+/set fset.color.title_sort 255
+/set fset.color.type 99
+/set fset.color.type_selected 99
+/set fset.color.unmarked 249
+/set fset.color.unmarked_selected 255
+/set fset.color.value 86
+/set fset.color.value_changed 221
+/set fset.color.value_changed_selected 227
+/set fset.color.value_selected 80
+/set fset.color.value_undef 99
+/set fset.color.value_undef_selected 99
+
+# ----------------------------
+# Save
+# ----------------------------
+/save
