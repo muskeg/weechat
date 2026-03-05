@@ -107,16 +107,16 @@
 /set weechat.bar.title.color_bg_inactive 233
 /set weechat.bar.title.color_fg 252
 /set weechat.bar.title.color_delim 245
-/set weechat.bar.input.color_bg 232
+/set weechat.bar.input.color_bg 236
 /set weechat.bar.input.color_fg default
 /set weechat.bar.input.color_delim 245
 /set weechat.bar.nicklist.color_bg 236
 /set weechat.bar.nicklist.color_fg 252
 /set weechat.bar.nicklist.color_delim 245
-/set weechat.bar.buflist.color_bg 232
+/set weechat.bar.buflist.color_bg 236
 /set weechat.bar.buflist.color_fg 252
 /set weechat.bar.buflist.color_delim 245
-/set weechat.bar.fset.color_bg 232
+/set weechat.bar.fset.color_bg 236
 /set weechat.bar.fset.color_fg 252
 /set weechat.bar.fset.color_delim 245
 
