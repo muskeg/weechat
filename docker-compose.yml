@@ -8,4 +8,4 @@ services:
     volumes:
       - ./data/config:/home/weechat/.config/weechat
       - ./data/share:/home/weechat/.local/share/weechat
-      - ./themes:/home/weechat/themes:ro
+      - ./themes:/home/weechat/themes

@@ -9,6 +9,7 @@
 # Usage:
 #   /theme list            — list available themes
 #   /theme apply <name>    — apply a theme (runs all /set commands)
+#   /theme save <name>     — snapshot current colors into a new theme
 #   /theme reset           — undo theme, restore WeeChat defaults
 #   /theme current         — show which theme is active
 #
@@ -23,7 +24,7 @@ import weechat
 
 SCRIPT_NAME = "theme_loader"
 SCRIPT_AUTHOR = "raph"
-SCRIPT_VERSION = "1.1"
+SCRIPT_VERSION = "1.2"
 SCRIPT_LICENSE = "MIT"
 SCRIPT_DESC = "Load color themes from commands.txt files"
 
@@ -94,6 +95,100 @@ def apply_theme(name, silent=False):
     return True
 
 
+# All option patterns that define a theme's visual appearance.
+# Used by both save (to snapshot) and as the canonical list of what a theme covers.
+THEME_OPTION_PATTERNS = [
+    # (pattern, section_comment)
+    ("weechat.color.*", "Core Chat Colors & UI"),
+    ("weechat.bar.*.color_*", "Bar Backgrounds & Foregrounds"),
+    ("irc.color.*", "IRC Plugin Colors"),
+    ("buflist.format.*", "Buflist Formats"),
+    ("fset.color.*", "Fset Plugin Colors"),
+]
+
+
+def get_option_value_str(option_name):
+    """Read the current value of a WeeChat option as a string."""
+    ptr = weechat.config_get(option_name)
+    if not ptr:
+        return None
+    return weechat.config_string(ptr) or weechat.config_color(ptr)
+
+
+def iter_options(pattern):
+    """Yield (option_name, value_string) for all options matching pattern."""
+    infolist = weechat.infolist_get("option", "", pattern)
+    if not infolist:
+        return
+    try:
+        while weechat.infolist_next(infolist):
+            full_name = weechat.infolist_string(infolist, "full_name")
+            opt_type = weechat.infolist_string(infolist, "type")
+            if opt_type == "color":
+                value = weechat.infolist_string(infolist, "value")
+            elif opt_type == "string":
+                value = weechat.infolist_string(infolist, "value")
+            else:
+                value = weechat.infolist_string(infolist, "value")
+            yield (full_name, value)
+    finally:
+        weechat.infolist_free(infolist)
+
+
+def save_theme(name):
+    """Snapshot the current running color config into a new theme folder."""
+    theme_dir = os.path.join(THEMES_DIR, name)
+    commands_file = os.path.join(theme_dir, "commands.txt")
+
+    # Check if themes dir is writable (it may be mounted :ro)
+    if not os.access(THEMES_DIR, os.W_OK):
+        weechat.prnt("", f"{SCRIPT_NAME}: cannot write to {THEMES_DIR} "
+                         f"(read-only mount?)")
+        return False
+
+    # Warn if overwriting
+    if os.path.isfile(commands_file):
+        weechat.prnt("", f"{SCRIPT_NAME}: overwriting existing theme "
+                         f"'{name}'")
+
+    os.makedirs(theme_dir, exist_ok=True)
+
+    lines = []
+    lines.append(f"# {'=' * 60}")
+    lines.append(f"# {name} — saved from running WeeChat config")
+    lines.append(f"# {'=' * 60}")
+    lines.append("")
+
+    total = 0
+    for pattern, section in THEME_OPTION_PATTERNS:
+        section_lines = []
+        for opt_name, opt_value in sorted(iter_options(pattern)):
+            # Quote values that contain spaces or special chars
+            if " " in opt_value or "{" in opt_value or ";" in opt_value:
+                if not (opt_value.startswith('"') and opt_value.endswith('"')):
+                    opt_value = f'"{opt_value}"'
+            section_lines.append(f"/set {opt_name} {opt_value}")
+
+        if section_lines:
+            lines.append(f"# {'—' * 30}")
+            lines.append(f"# {section}")
+            lines.append(f"# {'—' * 30}")
+            lines.extend(section_lines)
+            lines.append("")
+            total += len(section_lines)
+
+    lines.append("# Save")
+    lines.append("/save")
+
+    with open(commands_file, "w", encoding="utf-8") as f:
+        f.write("\n".join(lines) + "\n")
+
+    set_active_theme(name)
+    weechat.prnt("", f"{SCRIPT_NAME}: saved theme '{name}' "
+                     f"({total} options → {commands_file})")
+    return True
+
+
 def reset_theme(silent=False):
     """Undo the active theme by resetting all themed options to defaults."""
     active = get_active_theme()
@@ -151,6 +246,12 @@ def theme_command_cb(data, buffer, args):
         else:
             apply_theme(argv[1])
 
+    elif subcmd == "save":
+        if len(argv) < 2:
+            weechat.prnt("", f"{SCRIPT_NAME}: usage: /theme save <name>")
+        else:
+            save_theme(argv[1])
+
     elif subcmd == "reset":
         reset_theme()
 
@@ -165,6 +266,7 @@ def theme_command_cb(data, buffer, args):
         weechat.prnt("", f"{SCRIPT_NAME}: commands:")
         weechat.prnt("", "  /theme list            — list available themes")
         weechat.prnt("", "  /theme apply <name>    — apply a theme")
+        weechat.prnt("", "  /theme save <name>     — save current config as theme")
         weechat.prnt("", "  /theme reset           — undo theme, restore defaults")
         weechat.prnt("", "  /theme current         — show active theme")
 
@@ -184,12 +286,13 @@ if __name__ == "__main__":
     weechat.hook_command(
         "theme",
         "Load and apply color themes",
-        "list | apply <name> | reset | current",
+        "list | apply <name> | save <name> | reset | current",
         "  list: show available themes\n"
         " apply: apply a theme by name\n"
+        "  save: snapshot current colors into a new (or existing) theme\n"
         " reset: undo the active theme, restore WeeChat defaults\n"
         "current: show which theme is active",
-        "list || apply %(python_theme_names) || reset || current",
+        "list || apply %(python_theme_names) || save || reset || current",
         "theme_command_cb",
         "",
     )
