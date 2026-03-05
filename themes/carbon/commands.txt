@@ -19,7 +19,7 @@
 # Core Chat Colors
 # ----------------------------
 /set weechat.color.chat default
-/set weechat.color.chat_bg default
+/set weechat.color.chat_bg 232
 /set weechat.color.chat_buffer 75
 /set weechat.color.chat_channel 75
 /set weechat.color.chat_day_change 242
@@ -48,7 +48,7 @@
 /set weechat.color.chat_prefix_quit 203
 /set weechat.color.chat_prefix_suffix 75
 /set weechat.color.chat_read_marker 209
-/set weechat.color.chat_read_marker_bg default
+/set weechat.color.chat_read_marker_bg 232
 /set weechat.color.chat_server 221
 /set weechat.color.chat_status_disabled 203
 /set weechat.color.chat_status_enabled 78
@@ -107,16 +107,16 @@
 /set weechat.bar.title.color_bg_inactive 233
 /set weechat.bar.title.color_fg 252
 /set weechat.bar.title.color_delim 245
-/set weechat.bar.input.color_bg 233
+/set weechat.bar.input.color_bg 232
 /set weechat.bar.input.color_fg default
 /set weechat.bar.input.color_delim 245
-/set weechat.bar.nicklist.color_bg 233
+/set weechat.bar.nicklist.color_bg 232
 /set weechat.bar.nicklist.color_fg 252
 /set weechat.bar.nicklist.color_delim 245
-/set weechat.bar.buflist.color_bg 233
+/set weechat.bar.buflist.color_bg 232
 /set weechat.bar.buflist.color_fg 252
 /set weechat.bar.buflist.color_delim 245
-/set weechat.bar.fset.color_bg 233
+/set weechat.bar.fset.color_bg 232
 /set weechat.bar.fset.color_fg 252
 /set weechat.bar.fset.color_delim 245
 
