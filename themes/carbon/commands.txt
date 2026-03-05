@@ -150,7 +150,7 @@
 # Buflist Formats
 # ----------------------------
 /set buflist.format.buffer "${format_number}${indent}${format_nick_prefix}${color_hotlist}${format_name}"
-/set buflist.format.buffer_current "${color:,236}${format_buffer}"
+/set buflist.format.buffer_current "${color:,238}${format_buffer}"
 /set buflist.format.hotlist " ${color:78}(${hotlist}${color:78})"
 /set buflist.format.hotlist_highlight "${color:141}"
 /set buflist.format.hotlist_low "${color:245}"
