@@ -25,7 +25,7 @@
 /set weechat.color.chat_day_change 242
 /set weechat.color.chat_delimiters 245
 /set weechat.color.chat_highlight 221
-/set weechat.color.chat_highlight_bg default
+/set weechat.color.chat_highlight_bg 238
 /set weechat.color.chat_host 80
 /set weechat.color.chat_inactive_buffer default
 /set weechat.color.chat_inactive_window default
@@ -48,7 +48,7 @@
 /set weechat.color.chat_prefix_quit 203
 /set weechat.color.chat_prefix_suffix 75
 /set weechat.color.chat_read_marker 209
-/set weechat.color.chat_read_marker_bg 232
+/set weechat.color.chat_read_marker_bg 236
 /set weechat.color.chat_server 221
 /set weechat.color.chat_status_disabled 203
 /set weechat.color.chat_status_enabled 78
@@ -99,12 +99,12 @@
 # ----------------------------
 # Bar Backgrounds & Foregrounds
 # ----------------------------
-/set weechat.bar.status.color_bg 235
-/set weechat.bar.status.color_bg_inactive 233
+/set weechat.bar.status.color_bg 236
+/set weechat.bar.status.color_bg_inactive 235
 /set weechat.bar.status.color_fg 252
 /set weechat.bar.status.color_delim 245
-/set weechat.bar.title.color_bg 235
-/set weechat.bar.title.color_bg_inactive 233
+/set weechat.bar.title.color_bg 236
+/set weechat.bar.title.color_bg_inactive 235
 /set weechat.bar.title.color_fg 252
 /set weechat.bar.title.color_delim 245
 /set weechat.bar.input.color_bg 236
@@ -131,7 +131,7 @@
 /set irc.color.item_tls_version_insecure 203
 /set irc.color.item_tls_version_ok 78
 /set irc.color.list_buffer_line_selected 252
-/set irc.color.list_buffer_line_selected_bg 235
+/set irc.color.list_buffer_line_selected_bg 236
 /set irc.color.message_account 80
 /set irc.color.message_chghost 221
 /set irc.color.message_join 78
@@ -150,7 +150,7 @@
 # Buflist Formats
 # ----------------------------
 /set buflist.format.buffer "${format_number}${indent}${format_nick_prefix}${color_hotlist}${format_name}"
-/set buflist.format.buffer_current "${color:,235}${format_buffer}"
+/set buflist.format.buffer_current "${color:,238}${format_buffer}"
 /set buflist.format.hotlist " ${color:78}(${hotlist}${color:78})"
 /set buflist.format.hotlist_highlight "${color:141}"
 /set buflist.format.hotlist_low "${color:245}"
@@ -185,8 +185,8 @@
 /set fset.color.index_selected 75
 /set fset.color.line_marked_bg1 236
 /set fset.color.line_marked_bg2 236
-/set fset.color.line_selected_bg1 235
-/set fset.color.line_selected_bg2 235
+/set fset.color.line_selected_bg1 238
+/set fset.color.line_selected_bg2 238
 /set fset.color.marked 221
 /set fset.color.marked_selected 221
 /set fset.color.max 245
