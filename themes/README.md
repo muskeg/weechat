@@ -7,6 +7,7 @@ Custom color themes for WeeChat, ported from popular terminal/shell themes.
 | Theme | Source | Description |
 |-------|--------|-------------|
 | [gruvbox](gruvbox/) | [oh-my-posh gruvbox](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/gruvbox.omp.json) | Warm retro groove colorscheme |
+| [catppuccin_mocha](catppuccin_mocha/) | [oh-my-posh catppuccin_mocha](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/catppuccin_mocha.omp.json) | Cozy pastel dark theme with blue-tinted neutrals |
 
 ## How to Apply a Theme
 
