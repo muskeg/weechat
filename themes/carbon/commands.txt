@@ -138,7 +138,7 @@
 /set irc.color.message_kick 203
 /set irc.color.message_quit 203
 /set irc.color.message_setname 221
-/set irc.color.nick_prefixes "y:203;q:203;a:75;o:78;h:141;v:221;*:75"
+/set irc.color.nick_prefixes "y:203;q:203;a:75;o:68;h:141;v:221;*:75"
 /set irc.color.notice 78
 /set irc.color.reason_kick 245
 /set irc.color.reason_quit 245
