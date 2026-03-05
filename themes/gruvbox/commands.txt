@@ -3,34 +3,37 @@
 # Ported from oh-my-posh gruvbox.omp.json
 # ============================================================
 # Palette reference (256-color):
-#   bg0=235  bg1=237  bg2=239  bg3=241  bg4=243
-#   fg0=229  fg1=223  fg2=250  fg3=248  fg4=246  gray=245
-#   red=124  bright_red=167
-#   green=100  bright_green=142
-#   yellow=172  bright_yellow=214
-#   blue=66  bright_blue=109
-#   purple=132  bright_purple=175
-#   aqua=72  bright_aqua=108
-#   orange=166  bright_orange=208
+#   Backgrounds (only for bg use):
+#     bg0_h=234  bg0=235  bg1=237  bg2=239  bg3=241
+#   Foregrounds:
+#     fg0=229  fg1=223  fg2=250  fg3=248  fg4=246  gray=245
+#   Accents (BRIGHT variants — all safe as foreground on dark bg):
+#     red=167     green=142    yellow=214
+#     blue=109    purple=175   aqua=108
+#     orange=208
+#   Accents (normal — use sparingly, only for bg or subtle elements):
+#     red_dim=124   green_dim=100   yellow_dim=172
+#     blue_dim=66   purple_dim=132  aqua_dim=72
+#     orange_dim=166
 # ============================================================
 
 # ----------------------------
 # Core Chat Colors
 # ----------------------------
-/set weechat.color.chat 223
-/set weechat.color.chat_bg 235
+/set weechat.color.chat default
+/set weechat.color.chat_bg default
 /set weechat.color.chat_buffer 109
 /set weechat.color.chat_channel 109
-/set weechat.color.chat_day_change 245
-/set weechat.color.chat_delimiters 246
+/set weechat.color.chat_day_change 248
+/set weechat.color.chat_delimiters 248
 /set weechat.color.chat_highlight 214
 /set weechat.color.chat_highlight_bg 124
 /set weechat.color.chat_host 108
-/set weechat.color.chat_inactive_buffer 243
-/set weechat.color.chat_inactive_window 241
+/set weechat.color.chat_inactive_buffer 245
+/set weechat.color.chat_inactive_window 245
 /set weechat.color.chat_nick 109
-/set weechat.color.chat_nick_colors "124,132,166,172,100,72,66,167,175,208,214,142,108,109"
-/set weechat.color.chat_nick_offline 243
+/set weechat.color.chat_nick_colors "167,175,208,214,142,108,109,172,166"
+/set weechat.color.chat_nick_offline 246
 /set weechat.color.chat_nick_offline_highlight 214
 /set weechat.color.chat_nick_offline_highlight_bg 239
 /set weechat.color.chat_nick_other 108
@@ -39,26 +42,26 @@
 /set weechat.color.chat_nick_suffix 142
 /set weechat.color.chat_prefix_action 223
 /set weechat.color.chat_prefix_buffer 214
-/set weechat.color.chat_prefix_buffer_inactive_buffer 243
+/set weechat.color.chat_prefix_buffer_inactive_buffer 246
 /set weechat.color.chat_prefix_error 167
 /set weechat.color.chat_prefix_join 142
 /set weechat.color.chat_prefix_more 175
 /set weechat.color.chat_prefix_network 175
 /set weechat.color.chat_prefix_quit 167
-/set weechat.color.chat_prefix_suffix 66
+/set weechat.color.chat_prefix_suffix 109
 /set weechat.color.chat_read_marker 208
 /set weechat.color.chat_read_marker_bg default
-/set weechat.color.chat_server 172
+/set weechat.color.chat_server 214
 /set weechat.color.chat_status_disabled 167
 /set weechat.color.chat_status_enabled 142
-/set weechat.color.chat_tags 245
-/set weechat.color.chat_text_found 214
+/set weechat.color.chat_tags 248
+/set weechat.color.chat_text_found 229
 /set weechat.color.chat_text_found_bg 132
-/set weechat.color.chat_time 246
-/set weechat.color.chat_time_delimiters 243
+/set weechat.color.chat_time 248
+/set weechat.color.chat_time_delimiters 246
 /set weechat.color.chat_value 108
 /set weechat.color.chat_value_null 175
-/set weechat.color.emphasized 214
+/set weechat.color.emphasized 229
 /set weechat.color.emphasized_bg 132
 /set weechat.color.eval_syntax_colors "142,167,109,175,214,108"
 
@@ -68,7 +71,7 @@
 /set weechat.color.input_actions 142
 /set weechat.color.input_text_not_found 167
 /set weechat.color.item_away 214
-/set weechat.color.nicklist_away 245
+/set weechat.color.nicklist_away 246
 /set weechat.color.nicklist_group 142
 /set weechat.color.separator 237
 /set weechat.color.bar_more 175
@@ -77,12 +80,12 @@
 # Status Bar
 # ----------------------------
 /set weechat.color.status_count_highlight 175
-/set weechat.color.status_count_msg 172
-/set weechat.color.status_count_other 246
+/set weechat.color.status_count_msg 214
+/set weechat.color.status_count_other 248
 /set weechat.color.status_count_private 142
 /set weechat.color.status_data_highlight 175
 /set weechat.color.status_data_msg 214
-/set weechat.color.status_data_other 246
+/set weechat.color.status_data_other 248
 /set weechat.color.status_data_private 142
 /set weechat.color.status_filter 142
 /set weechat.color.status_modes 223
@@ -91,9 +94,9 @@
 /set weechat.color.status_name 223
 /set weechat.color.status_name_insecure 167
 /set weechat.color.status_name_tls 142
-/set weechat.color.status_nicklist_count 246
+/set weechat.color.status_nicklist_count 248
 /set weechat.color.status_number 214
-/set weechat.color.status_time 246
+/set weechat.color.status_time 248
 
 # ----------------------------
 # Bar Backgrounds & Foregrounds
@@ -101,49 +104,49 @@
 /set weechat.bar.status.color_bg 237
 /set weechat.bar.status.color_bg_inactive 235
 /set weechat.bar.status.color_fg 223
-/set weechat.bar.status.color_delim 246
+/set weechat.bar.status.color_delim 248
 /set weechat.bar.title.color_bg 237
 /set weechat.bar.title.color_bg_inactive 235
 /set weechat.bar.title.color_fg 223
-/set weechat.bar.title.color_delim 246
+/set weechat.bar.title.color_delim 248
 /set weechat.bar.input.color_bg default
 /set weechat.bar.input.color_fg default
-/set weechat.bar.input.color_delim 246
+/set weechat.bar.input.color_delim 248
 /set weechat.bar.nicklist.color_bg default
 /set weechat.bar.nicklist.color_fg 223
-/set weechat.bar.nicklist.color_delim 246
+/set weechat.bar.nicklist.color_delim 248
 /set weechat.bar.buflist.color_bg default
 /set weechat.bar.buflist.color_fg 223
-/set weechat.bar.buflist.color_delim 246
+/set weechat.bar.buflist.color_delim 248
 /set weechat.bar.fset.color_bg default
 /set weechat.bar.fset.color_fg 223
-/set weechat.bar.fset.color_delim 246
+/set weechat.bar.fset.color_delim 248
 
 # ----------------------------
 # IRC Plugin Colors
 # ----------------------------
 /set irc.color.input_nick 214
-/set irc.color.item_lag_counting 246
+/set irc.color.item_lag_counting 248
 /set irc.color.item_lag_finished 214
-/set irc.color.item_nick_modes 246
-/set irc.color.item_tls_version_deprecated 172
+/set irc.color.item_nick_modes 248
+/set irc.color.item_tls_version_deprecated 214
 /set irc.color.item_tls_version_insecure 167
 /set irc.color.item_tls_version_ok 142
 /set irc.color.list_buffer_line_selected 223
 /set irc.color.list_buffer_line_selected_bg 237
 /set irc.color.message_account 108
-/set irc.color.message_chghost 172
+/set irc.color.message_chghost 214
 /set irc.color.message_join 142
 /set irc.color.message_kick 167
 /set irc.color.message_quit 167
-/set irc.color.message_setname 172
-/set irc.color.nick_prefixes "y:167;q:167;a:109;o:142;h:175;v:214;*:66"
+/set irc.color.message_setname 214
+/set irc.color.nick_prefixes "y:167;q:167;a:109;o:142;h:175;v:214;*:109"
 /set irc.color.notice 142
-/set irc.color.reason_kick 246
-/set irc.color.reason_quit 246
+/set irc.color.reason_kick 248
+/set irc.color.reason_quit 248
 /set irc.color.topic_current 223
 /set irc.color.topic_new 108
-/set irc.color.topic_old 245
+/set irc.color.topic_old 246
 
 # ----------------------------
 # Buflist Formats
@@ -152,33 +155,33 @@
 /set buflist.format.buffer_current "${color:,237}${format_buffer}"
 /set buflist.format.hotlist " ${color:142}(${hotlist}${color:142})"
 /set buflist.format.hotlist_highlight "${color:175}"
-/set buflist.format.hotlist_low "${color:246}"
-/set buflist.format.hotlist_message "${color:172}"
+/set buflist.format.hotlist_low "${color:248}"
+/set buflist.format.hotlist_message "${color:214}"
 /set buflist.format.hotlist_none "${color:223}"
 /set buflist.format.hotlist_private "${color:142}"
-/set buflist.format.hotlist_separator "${color:246},"
-/set buflist.format.lag " ${color:142}[${color:172}${lag}${color:142}]"
+/set buflist.format.hotlist_separator "${color:248},"
+/set buflist.format.lag " ${color:142}[${color:214}${lag}${color:142}]"
 /set buflist.format.number "${color:214}${number}${if:${number_displayed}?.: }"
 
 # ----------------------------
 # Fset Plugin Colors
 # ----------------------------
-/set fset.color.allowed_values 246
+/set fset.color.allowed_values 248
 /set fset.color.allowed_values_selected 223
-/set fset.color.color_name 246
+/set fset.color.color_name 248
 /set fset.color.color_name_selected 223
-/set fset.color.default_value 246
+/set fset.color.default_value 248
 /set fset.color.default_value_selected 223
-/set fset.color.description 245
+/set fset.color.description 246
 /set fset.color.description_selected 223
-/set fset.color.file 246
-/set fset.color.file_changed 172
+/set fset.color.file 248
+/set fset.color.file_changed 214
 /set fset.color.file_changed_selected 214
 /set fset.color.file_selected 223
 /set fset.color.help_default_value 223
 /set fset.color.help_description 223
 /set fset.color.help_name 223
-/set fset.color.help_quotes 241
+/set fset.color.help_quotes 246
 /set fset.color.help_values 223
 /set fset.color.index 108
 /set fset.color.index_selected 109
@@ -186,42 +189,42 @@
 /set fset.color.line_marked_bg2 239
 /set fset.color.line_selected_bg1 237
 /set fset.color.line_selected_bg2 237
-/set fset.color.marked 172
+/set fset.color.marked 214
 /set fset.color.marked_selected 214
-/set fset.color.max 246
+/set fset.color.max 248
 /set fset.color.max_selected 223
-/set fset.color.min 246
+/set fset.color.min 248
 /set fset.color.min_selected 223
 /set fset.color.name 223
 /set fset.color.name_changed 214
 /set fset.color.name_changed_selected 214
 /set fset.color.name_selected 229
 /set fset.color.option 223
-/set fset.color.option_changed 172
+/set fset.color.option_changed 214
 /set fset.color.option_changed_selected 214
 /set fset.color.option_selected 229
-/set fset.color.parent_name 246
+/set fset.color.parent_name 248
 /set fset.color.parent_name_selected 223
 /set fset.color.parent_value 108
 /set fset.color.parent_value_selected 109
-/set fset.color.quotes 241
-/set fset.color.quotes_changed 246
+/set fset.color.quotes 246
+/set fset.color.quotes_changed 248
 /set fset.color.quotes_changed_selected 223
-/set fset.color.quotes_selected 246
-/set fset.color.section 246
-/set fset.color.section_changed 172
+/set fset.color.quotes_selected 248
+/set fset.color.section 248
+/set fset.color.section_changed 214
 /set fset.color.section_changed_selected 214
 /set fset.color.section_selected 223
-/set fset.color.string_values 246
+/set fset.color.string_values 248
 /set fset.color.string_values_selected 223
 /set fset.color.title_count_options 108
 /set fset.color.title_current_option 109
 /set fset.color.title_filter 214
 /set fset.color.title_marked_options 142
 /set fset.color.title_sort 223
-/set fset.color.type 132
+/set fset.color.type 175
 /set fset.color.type_selected 175
-/set fset.color.unmarked 246
+/set fset.color.unmarked 248
 /set fset.color.unmarked_selected 223
 /set fset.color.value 108
 /set fset.color.value_changed 214
