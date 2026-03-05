@@ -267,11 +267,15 @@ def theme_command_cb(data, buffer, args):
                              f"{THEMES_DIR}")
         else:
             weechat.prnt("", f"{SCRIPT_NAME}: available themes:")
+            col_name = weechat.color("green")
+            col_active = weechat.color("lightmagenta")
+            col_desc = weechat.color("gray")
+            col_reset = weechat.color("reset")
             for t in themes:
-                marker = " \x0313(active)\x0f" if t == active else ""
+                marker = f" {col_active}(active){col_reset}" if t == active else ""
                 desc = get_theme_description(t)
-                desc_str = f" \x0314— {desc}\x0f" if desc else ""
-                weechat.prnt("", f"  \x0306{t}\x0f{marker}{desc_str}")
+                desc_str = f" {col_desc}— {desc}{col_reset}" if desc else ""
+                weechat.prnt("", f"  {col_name}{t}{col_reset}{marker}{desc_str}")
 
     elif subcmd == "apply":
         if len(argv) < 2:
