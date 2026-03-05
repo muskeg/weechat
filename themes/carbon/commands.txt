@@ -103,8 +103,8 @@
 /set weechat.bar.status.color_bg_inactive default
 /set weechat.bar.status.color_fg 252
 /set weechat.bar.status.color_delim 245
-/set weechat.bar.title.color_bg default
-/set weechat.bar.title.color_bg_inactive default
+/set weechat.bar.title.color_bg 233
+/set weechat.bar.title.color_bg_inactive 233
 /set weechat.bar.title.color_fg 252
 /set weechat.bar.title.color_delim 245
 /set weechat.bar.input.color_bg default
@@ -150,7 +150,7 @@
 # Buflist Formats
 # ----------------------------
 /set buflist.format.buffer "${format_number}${indent}${format_nick_prefix}${color_hotlist}${format_name}"
-/set buflist.format.buffer_current "${color:,default}${format_buffer}"
+/set buflist.format.buffer_current "${color:,236}${format_buffer}"
 /set buflist.format.hotlist " ${color:78}(${hotlist}${color:78})"
 /set buflist.format.hotlist_highlight "${color:141}"
 /set buflist.format.hotlist_low "${color:245}"
