@@ -123,11 +123,13 @@ RUN printf '%s\n' \
     'set -gq utf8 on' \
     'set -gq status-utf8 on' \
     '' \
-    '# Minimal dark status bar — just time on the right, nothing on the left' \
-    'set -g status-style "bg=colour235,fg=colour246"' \
+    '# Minimal dark status bar — just time on the right, nothing else' \
+    'set -g status-style "bg=colour235,fg=colour243"' \
     'set -g status-left ""' \
     'set -g status-right " %H:%M %Y-%m-%d "' \
-    'set -g status-right-style "bg=colour235,fg=colour246"' \
+    'set -g status-right-style "bg=colour235,fg=colour243"' \
+    'set -g window-status-format ""' \
+    'set -g window-status-current-format ""' \
     > /home/weechat/.tmux.conf \
     && chown weechat:weechat /home/weechat/.tmux.conf
 
