@@ -19,7 +19,7 @@
 # Core Chat Colors
 # ----------------------------
 /set weechat.color.chat default
-/set weechat.color.chat_bg default
+/set weechat.color.chat_bg 236
 /set weechat.color.chat_buffer 75
 /set weechat.color.chat_channel 75
 /set weechat.color.chat_day_change 242
@@ -110,7 +110,7 @@
 /set weechat.bar.input.color_bg 232
 /set weechat.bar.input.color_fg default
 /set weechat.bar.input.color_delim 245
-/set weechat.bar.nicklist.color_bg 232
+/set weechat.bar.nicklist.color_bg 236
 /set weechat.bar.nicklist.color_fg 252
 /set weechat.bar.nicklist.color_delim 245
 /set weechat.bar.buflist.color_bg 232
