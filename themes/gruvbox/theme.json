@@ -1,0 +1,9 @@
+{
+  "name": "gruvbox",
+  "display_name": "Gruvbox Theme for WeeChat",
+  "description": "Warm retro groove colorscheme",
+  "source": {
+    "label": "oh-my-posh gruvbox",
+    "url": "https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/gruvbox.omp.json"
+  }
+}

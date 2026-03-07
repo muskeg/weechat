@@ -1,0 +1,9 @@
+{
+  "name": "catppuccin_mocha",
+  "display_name": "Catppuccin Mocha Theme for WeeChat",
+  "description": "Cozy pastel dark theme with blue-tinted neutrals",
+  "source": {
+    "label": "oh-my-posh catppuccin_mocha",
+    "url": "https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/catppuccin_mocha.omp.json"
+  }
+}
