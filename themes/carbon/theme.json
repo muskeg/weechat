@@ -1,0 +1,9 @@
+{
+  "name": "carbon",
+  "display_name": "Carbon Theme for WeeChat",
+  "description": "Sleek modern OLED-friendly theme with electric blue accents on true black",
+  "source": {
+    "label": "Original design",
+    "url": null
+  }
+}

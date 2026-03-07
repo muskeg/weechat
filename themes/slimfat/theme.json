@@ -1,0 +1,9 @@
+{
+  "name": "slimfat",
+  "display_name": "Slimfat Theme for WeeChat",
+  "description": "High-contrast neon cyberpunk with cyan/mint/yellow accents",
+  "source": {
+    "label": "oh-my-posh slimfat",
+    "url": "https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/slimfat.omp.json"
+  }
+}

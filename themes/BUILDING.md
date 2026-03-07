@@ -12,6 +12,32 @@ step-by-step to produce a complete, working theme.
 - Access to the source theme's color palette (hex values)
 - Familiarity with 256-color terminal codes
 - The reference theme at `themes/gruvbox/` as a structural template
+- The maintenance tool at `themes/tools/theme_tools.py`
+
+---
+
+## Theme Folder Layout
+
+Each theme folder should contain:
+
+- `theme.json` — machine-readable metadata (`name`, `description`, `source`)
+- `README.md` — human-oriented palette analysis and design notes
+- `commands.txt` — the full `/set` command list ending with `/save`
+
+For new themes, prefer scaffolding the folder first:
+
+```bash
+python3 themes/tools/theme_tools.py scaffold mytheme \
+      --description "Short description" \
+      --source-label "Original design" \
+      --base gruvbox
+```
+
+To export a plain applyable command list for sharing outside the plugin:
+
+```bash
+python3 themes/tools/theme_tools.py print-commands mytheme --keep-save
+```
 
 ---
 
@@ -132,6 +158,10 @@ The file MUST:
 3. End with `/save`
 4. Use ONLY `/set` commands (the `theme_loader.py` script only executes `/set`
    and `/save` for safety)
+
+Also update `theme.json` with the final theme description/source before you
+consider the theme complete. The top-level `themes/README.md` is generated from
+these metadata files.
 
 ### Section: Core Chat Colors
 

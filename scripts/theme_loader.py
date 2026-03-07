@@ -15,16 +15,18 @@
 #
 # The script looks for themes in THEMES_DIR (default: ~/themes).
 # Each theme is a subfolder containing a commands.txt file.
+# If present, theme.json provides machine-readable metadata like descriptions.
 #
 # On load, it auto-applies the theme stored in the WeeChat option
 # plugins.var.python.theme_loader.active_theme (if set).
 
+import json
 import os
 import weechat
 
 SCRIPT_NAME = "theme_loader"
 SCRIPT_AUTHOR = "raph"
-SCRIPT_VERSION = "1.2"
+SCRIPT_VERSION = "1.3"
 SCRIPT_LICENSE = "MIT"
 SCRIPT_DESC = "Load color themes from commands.txt files"
 
@@ -54,13 +56,29 @@ def list_themes():
 
 
 def get_theme_description(name):
-    """Extract a short description from the theme's README.md.
+    """Return a short description for a theme.
 
-    Reads the second heading (## ...) as the tagline if present,
-    otherwise takes the first non-empty, non-heading paragraph line.
-    Strips markdown formatting for clean display in WeeChat.
+    Prefers theme.json metadata when available.
+    Falls back to extracting a short description from README.md.
+
+    README fallback takes the first non-empty, non-heading paragraph line.
+    Markdown formatting is stripped for clean display in WeeChat.
     """
     import re
+
+    metadata = os.path.join(THEMES_DIR, name, "theme.json")
+    if os.path.isfile(metadata):
+        try:
+            with open(metadata, "r", encoding="utf-8") as f:
+                data = json.load(f)
+            desc = data.get("description", "").strip()
+            if desc:
+                if len(desc) > 80:
+                    desc = desc[:77] + "..."
+                return desc
+        except (OSError, ValueError, TypeError):
+            pass
+
     readme = os.path.join(THEMES_DIR, name, "README.md")
     if not os.path.isfile(readme):
         return ""
