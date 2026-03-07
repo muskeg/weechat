@@ -11,6 +11,7 @@ Custom color themes for WeeChat, ported from popular terminal/shell themes.
 | [slimfat](slimfat/) | [oh-my-posh slimfat](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/slimfat.omp.json) | High-contrast neon cyberpunk with cyan/mint/yellow accents |
 | [yozakura](yozakura/) | Original design | 夜桜 — Night cherry blossoms with lantern gold and moonlight blue |
 | [carbon](carbon/) | Original design | Sleek modern OLED-friendly theme with electric blue accents on true black |
+| [fretsonfire](fretsonfire/) | [fretsonfire.org](https://fretsonfire.org) | Deep maroon panels and fiery gold accents inspired by the FoF forum |
 
 ## How to Apply a Theme
 
